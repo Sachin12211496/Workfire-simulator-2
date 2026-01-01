@@ -327,3 +327,59 @@ body {
   transition-timing-function: ease-out;
   transition-duration: 0.4s;
 }
+/* Intro Overlay - Sabse upar */
+#new-year-intro {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 1s ease;
+}
+
+/* Permanent Celebration - Text ab dikhega! */
+#permanent-celebration {
+    position: fixed;
+    top: 15%; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1; /* Background se upar, Canvas se niche */
+    display: none; 
+}
+
+.celebration-small {
+    font-family: "Russo One", sans-serif;
+    font-size: 1.8rem;
+    background: linear-gradient(to bottom, #CFD1D3, #6D7075);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 6px;
+}
+
+.year-blue-3d {
+    font-family: "Russo One", sans-serif;
+    font-size: 6rem;
+    background: linear-gradient(to bottom, #47E9FF, #1E7FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 5px 15px rgba(30, 127, 255, 0.5);
+}
+
+/* Canvas ko Transparent rakhna zaroori hai */
+canvas {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 2; /* Patake text ke upar chalenge */
+    background: transparent !important;
+}
+
+@media (max-width: 640px) {
+    .hny-text { font-size: 2.5rem; }
+    .hny-2026-intro { font-size: 4rem; }
+    .year-blue-3d { font-size: 3.5rem; }
+    #permanent-celebration { top: 100px; }
+}
