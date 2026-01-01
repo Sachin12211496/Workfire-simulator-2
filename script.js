@@ -2306,3 +2306,27 @@ if (IS_HEADER) {
 		);
 	}, 0);
 }
+function startApp() {
+    const intro = document.getElementById('new-year-intro');
+    const perm = document.getElementById('permanent-celebration');
+
+    // Canvas ko transparent force karein
+    const canvas = document.querySelector('canvas');
+    if(canvas) canvas.style.background = 'transparent';
+
+    setTimeout(() => {
+        if (intro) {
+            intro.style.opacity = '0';
+            setTimeout(() => {
+                intro.style.display = 'none';
+                if (perm) {
+                    perm.style.display = 'block';
+                    perm.style.zIndex = "1"; // Pakka karein ki ye dikhe
+                }
+            }, 1000);
+        }
+    }, 6000);
+}
+
+// Window load hone ka wait karein
+window.addEventListener('load', startApp);
